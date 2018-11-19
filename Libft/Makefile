@@ -1,72 +1,66 @@
 NAME = libft.a
 CPL = gcc -Wall -Wextra -Werror
-HEADERS_FOLDER = ./includes/
-HEADER =  includes/libft.h
-INCDIRS = $(addprefix -I,$(HEADER_FOLDER))
-SRCS= 	srcs/memory/ft_memset.c \
-		srcs/memory/ft_bzero.c \
-		srcs/memory/ft_memcpy.c \
-		srcs/memory/ft_memccpy.c \
-		srcs/memory/ft_memmove.c \
-		srcs/memory/ft_memchr.c \
-		srcs/memory/ft_memcmp.c \
-		srcs/memory/ft_memalloc.c \
-		srcs/memory/ft_memdel.c \
-		srcs/string/ft_strlen.c \
-		srcs/string/ft_strdup.c \
-		srcs/string/ft_strcpy.c \
-		srcs/string/ft_strncpy.c \
-		srcs/string/ft_strcat.c \
-		srcs/string/ft_strncat.c \
-		srcs/string/ft_strlcat.c \
-		srcs/string/ft_strchr.c \
-		srcs/string/ft_strrchr.c \
-		srcs/string/ft_strstr.c \
-		srcs/string/ft_strnstr.c \
-		srcs/string/ft_strcmp.c \
-		srcs/string/ft_strncmp.c \
-		srcs/string/ft_strnew.c \
-		srcs/string/ft_strdel.c \
-		srcs/string/ft_strclr.c \
-		srcs/string/ft_striter.c \
-		srcs/string/ft_striteri.c \
-		srcs/string/ft_strmap.c \
-		srcs/string/ft_strmapi.c \
-		srcs/string/ft_strequ.c \
-		srcs/string/ft_strnequ.c \
-		srcs/string/ft_strsub.c \
-		srcs/string/ft_strjoin.c \
-		srcs/string/ft_strtrim.c \
-		srcs/string/ft_strsplit.c \
-		srcs/itoatoi/ft_itoa.c \
-		srcs/itoatoi/ft_atoi.c \
-		srcs/put/ft_putchar.c \
-		srcs/put/ft_putstr.c \
-		srcs/put/ft_putendl.c \
-		srcs/put/ft_putnbr.c \
-		srcs/put/ft_putchar_fd.c \
-		srcs/put/ft_putstr_fd.c \
-		srcs/put/ft_putendl_fd.c \
-		srcs/put/ft_putnbr_fd.c \
-		srcs/is/ft_isalpha.c \
-		srcs/is/ft_isdigit.c \
-		srcs/is/ft_isalnum.c \
-		srcs/is/ft_isascii.c \
-		srcs/is/ft_isprint.c \
-		srcs/is/ft_toupper.c \
-		srcs/is/ft_tolower.c
+HEADER = -I libft.h
+SRCS= 	ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memccpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memalloc.c \
+		ft_memdel.c \
+		ft_strlen.c \
+		ft_strdup.c \
+		ft_strcpy.c \
+		ft_strncpy.c \
+		ft_strcat.c \
+		ft_strncat.c \
+		ft_strlcat.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strstr.c \
+		ft_strnstr.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
+		ft_strnew.c \
+		ft_strdel.c \
+		ft_strclr.c \
+		ft_striter.c \
+		ft_striteri.c \
+		ft_strmap.c \
+		ft_strmapi.c \
+		ft_strequ.c \
+		ft_strnequ.c \
+		ft_strsub.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_strsplit.c \
+		ft_itoa.c \
+		ft_atoi.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putendl.c \
+		ft_putnbr.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_isalpha.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+		ft_tolower.c
 
 OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	#$(CC) $(INCDIRS) $(CLIB) -o $@ $(OBJECTS)
+	$(CPL) $(HEADER) -c $(SRCS)
 	ar -rcv $(NAME) $(OBJECTS)
 	ranlib $(NAME)
-
-%.c : %.s $(HEADER)
-	$(CPL) -c $< -o $@ -I includes/
-	#$(CPL) -I $(HEADERS_FOLDER) -c $(SRCS)
 
 clean:
 	rm -f $(OBJECTS)

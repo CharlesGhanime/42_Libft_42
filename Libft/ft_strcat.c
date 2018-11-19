@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 17:29:04 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/18 23:55:38 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/19 19:22:54 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ char	*ft_strcat(char *dst, const char *src)
 	size_t j;
 
 	i = 0;
-	while (s1[i] != '\0')
+	while (dst[i] != '\0')
 		i++;
 	j = 0;
-	while (s2[j] != '\0')
+	while (src[j] != '\0')
 	{
-		s1[i] = s2[j];
+		dst[i] = src[j];
 		i++;
-		++j;
+		j++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	dst[i] = '\0';
+	return (dst);
 }
