@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 20:43:43 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 16:40:38 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 12:47:49 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	size_t i;
+	char	*ptr;
 
-	i = 0;
-	while (i != '\0')
+	if (!s || !f)
+		return ;
+	ptr = s;
+	while(*ptr != '\0')
 	{
-		(*f)(s[i]);
-		i++;
+		(f)(ptr++);
 	}
 }

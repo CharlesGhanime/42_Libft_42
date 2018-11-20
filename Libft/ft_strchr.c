@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:21:50 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 17:22:02 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 12:11:10 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			return (s);
+			return ((char *)s);
+		i++;
 	}
+	if (c == '\0')
+		return ((char *)s);
+	return (0);
 }

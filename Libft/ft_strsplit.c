@@ -1,4 +1,4 @@
-/ ************************************************************************** */
+/*  ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
@@ -6,13 +6,13 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:55:38 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 17:59:23 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 12:15:58 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-int		ft_wordcount(char const *s, char c)
+static int		ft_wordcount(char const *s, char c)
 {
 	size_t			i;
 	unsigned int	wordcount;
@@ -31,7 +31,7 @@ int		ft_wordcount(char const *s, char c)
 	return (wordcount);
 }
 
-char **ft_filling(char const *s, char c, char **tab)
+static char **ft_filling(char const *s, char c, char **tab)
 {
 	size_t begin;
 	size_t end;
@@ -48,7 +48,7 @@ char **ft_filling(char const *s, char c, char **tab)
 		while (s[end] && s[end] != c)
 			end++;
 		if (end - begin != 0)
-			tab[i++] = ft_strndup(s + begin, end - begin);
+			tab[i++] = ft_strndup((char *)s + begin, end - begin);
 	}
 	tab[i] = NULL;
 	return (tab);

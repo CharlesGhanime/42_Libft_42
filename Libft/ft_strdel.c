@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 22:24:19 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 16:39:01 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 11:53:33 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_strdel(char **as)
 	size_t i;
 
 	i = 0;
-	free(**as);
-	**as = NULL;
+	free(*as);
+	*as = NULL;
 }

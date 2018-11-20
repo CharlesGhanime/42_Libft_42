@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 15:58:17 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 15:19:47 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 12:40:42 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putstr_fd(char const *s, int fd)
 	fd = 1;
 	while (s[i] != '\0')
 	{
-		ft_putchar_fd(&s[i], fd);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }

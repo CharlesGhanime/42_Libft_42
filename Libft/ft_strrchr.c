@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:28:32 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 17:52:47 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 13:08:04 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strrchr(const char *s, int c)
 		{
 			compare++;
 			if (s[i] == c && (compare == counter))
-				return (s);
+				return ((char *)s);
 		}
 		i++;
 	}
