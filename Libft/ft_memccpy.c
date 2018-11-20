@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:00:59 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 15:03:25 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 20:00:09 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		if (csrc[i] == ch)
-			return (&cdst[i + 1]);
+			return (cdst + i + 1);
 		else
 			cdst[i] = csrc[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 20:43:43 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 12:47:49 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 19:13:40 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striter(char *s, void (*f)(char *))
 	if (!s || !f)
 		return ;
 	ptr = s;
-	while(*ptr != '\0')
+	while (*ptr != '\0')
 	{
 		(f)(ptr++);
 	}

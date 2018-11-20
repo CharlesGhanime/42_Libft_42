@@ -6,13 +6,13 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:05:11 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 15:19:21 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 19:54:58 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_int_limit(int fd)
+static	void	ft_int_limit(int fd)
 {
 	ft_putchar_fd('-', fd);
 	ft_putchar_fd('2', fd);
@@ -27,7 +27,7 @@ void	ft_int_limit(int fd)
 	ft_putchar_fd('8', fd);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void			ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		ft_int_limit(fd);
