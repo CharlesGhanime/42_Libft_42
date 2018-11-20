@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:07:50 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 19:29:26 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/20 21:30:06 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,26 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*cdst;
 	char	*csrc;
-	char	*tab;
 	size_t	i;
 
 	cdst = (char *)dst;
 	csrc = (char *)src;
-	tab = NULL;
 	i = 0;
-	while (i < len)
+	if (src < dst)
 	{
-		tab[i] = csrc[i];
-		i++;
+		while (len)
+		{
+			len--;
+			cdst[len] = csrc[len];
+		}
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		cdst[i] = tab[i];
-		i++;
+		while (i < len)
+		{
+			cdst[i] = csrc[i];
+			i++;
+		}
 	}
-	return (cdst);
+	return (dst);
 }
