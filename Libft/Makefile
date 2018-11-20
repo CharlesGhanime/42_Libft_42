@@ -52,7 +52,10 @@ SRCS= 	ft_memset.c \
 		ft_isascii.c \
 		ft_isprint.c \
 		ft_toupper.c \
-		ft_tolower.c
+		ft_tolower.c \
+		ft_strndup.c \
+		ft_islower.c \
+		ft_isupper.c \
 
 OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)
