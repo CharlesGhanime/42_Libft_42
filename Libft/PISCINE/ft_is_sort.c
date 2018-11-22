@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/20 02:39:09 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/20 03:41:24 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	write(fd, &c, 1);
+	int i;
+
+	i = 0;
+	while (i + 1 < length)
+	{
+		if (f(tab[i], tab[i + 1]) > 0)
+			return (0);
+		++i;
+	}
+	return (1);
 }

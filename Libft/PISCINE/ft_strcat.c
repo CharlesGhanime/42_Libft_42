@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   fr_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/11 16:46:00 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/14 05:06:07 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+char	*ft_strcat(char *dest, char *src)
 {
-	write(fd, &c, 1);
+	unsigned int x;
+	unsigned int y;
+
+	x = 0;
+	while (dest[x] != '\0')
+		x++;
+	y = 0;
+	while (src[y] != '\0')
+	{
+		dest[x] = src[y];
+		x++;
+		++y;
+	}
+	dest[x] = '\0';
+	return (dest);
 }

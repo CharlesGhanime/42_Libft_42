@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/12 17:47:14 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/15 20:09:17 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+void	ft_putchar(char c);
 
-void	ft_putchar_fd(char c, int fd)
+int		main(int argc, char **argv)
 {
-	write(fd, &c, 1);
+	int x;
+	int y;
+
+	x = argc - 1;
+	while (x > 0)
+	{
+		y = 0;
+		while (argv[x][y] != '\0')
+		{
+			ft_putchar(argv[x][y]);
+			y++;
+		}
+		ft_putchar('\n');
+		x--;
+	}
+	return (0);
 }

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/20 02:32:48 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/20 03:40:39 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_count_if(char **tab, int (*f)(char*))
 {
-	write(fd, &c, 1);
+	int i;
+	int c;
+
+	i = 0;
+	c = 0;
+	while (tab[i])
+	{
+		if ((*f)(tab[i]) == 1)
+			++c;
+		++i;
+	}
+	return (c);
 }

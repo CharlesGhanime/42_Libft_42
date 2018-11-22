@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 14:47:54 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 12:39:34 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/21 16:06:27 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int		ft_tolower(int c)
 {
-	if (c > 'A' && c < 'Z')
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	else
-		return (c);
+	return (c);
 }

@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/06 15:23:28 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/10 16:54:57 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_iterative_factorial(int nb)
 {
-	write(fd, &c, 1);
+	int i;
+	int fact;
+
+	i = 2;
+	fact = nb;
+	if (nb == 0 || nb == 1)
+		return (1);
+	if (nb < 0 || nb > 12)
+		return (0);
+	else
+	{
+		while (i < fact)
+		{
+			nb = nb * i;
+			i++;
+		}
+	}
+	return (nb);
 }

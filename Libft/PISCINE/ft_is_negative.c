@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/08/30 19:07:05 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/05 16:09:50 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+int		ft_putchar(char c);
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_is_negative(int n)
 {
-	write(fd, &c, 1);
+	char c;
+
+	c = 0;
+	if (n >= 0)
+	{
+		c = 80;
+		ft_putchar(c);
+	}
+	else
+	{
+		c = 78;
+		ft_putchar(c);
+	}
 }

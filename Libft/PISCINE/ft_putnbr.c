@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 11:21:12 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 17:04:07 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/10 00:34:33 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/13 14:22:20 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+int		ft_putchar(char c);
 
-static	void	ft_int_limit(void)
+void	ft_int_limit(void)
 {
 	ft_putchar('-');
 	ft_putchar('2');
@@ -27,23 +27,27 @@ static	void	ft_int_limit(void)
 	ft_putchar('8');
 }
 
-void			ft_putnbr(int n)
+void	ft_putnbr(int nb)
 {
-	if (n == -2147483648)
+	if (nb == -2147483648)
+	{
 		ft_int_limit();
+	}
 	else
 	{
-		if (n < 0)
+		if (nb >= 0 && nb <= 9)
+		{
+			ft_putchar(nb + 48);
+		}
+		if (nb < 0)
 		{
 			ft_putchar('-');
-			n = n * -1;
+			nb = nb * -1;
 		}
-		if (n >= 0 && n <= 9)
-			ft_putchar(n + 48);
-		if (n >= 10)
+		if (nb >= 10)
 		{
-			ft_putnbr(n / 10);
-			ft_putnbr(n % 10);
+			ft_putnbr(nb / 10);
+			ft_putnbr(nb % 10);
 		}
 	}
 }

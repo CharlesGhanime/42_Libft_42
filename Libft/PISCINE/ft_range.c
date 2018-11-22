@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/14 11:23:48 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/17 23:43:52 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	ft_putchar_fd(char c, int fd)
+int		*ft_range(int min, int max)
 {
-	write(fd, &c, 1);
+	int *tab;
+
+	if (min >= max)
+	{
+		return (0);
+	}
+	if (!(tab = malloc(sizeof(int) * (max - min))))
+		return (NULL);
+	while (max >= min)
+	{
+		tab[max - min - 1] = max - 1;
+		max--;
+	}
+	return (tab);
 }

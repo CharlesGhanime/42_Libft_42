@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/12 17:03:34 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/15 20:08:20 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+void	ft_putchar(char c);
 
-void	ft_putchar_fd(char c, int fd)
+int		main(int argc, char **argv)
 {
-	write(fd, &c, 1);
+	int x;
+
+	x = 0;
+	while (argv[0][x] != '\0' && argc)
+	{
+		ft_putchar(argv[0][x]);
+		x++;
+	}
+	ft_putchar('\n');
+	return (0);
 }

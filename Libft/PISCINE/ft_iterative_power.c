@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/07 12:09:18 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/09 14:48:22 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_iterative_power(int nb, int power)
 {
-	write(fd, &c, 1);
+	int res;
+	int i;
+
+	res = 1;
+	i = power;
+	if (power == 0)
+	{
+		return (1);
+	}
+	if (power < 0)
+		return (0);
+	while (i != 0)
+	{
+		res = res * nb;
+		i--;
+	}
+	return (res);
 }

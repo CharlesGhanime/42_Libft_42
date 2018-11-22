@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:00:06 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/22 16:41:29 by cghanime         ###   ########.fr       */
+/*   Created: 2018/09/11 13:13:02 by cghanime          #+#    #+#             */
+/*   Updated: 2018/09/14 05:03:07 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_str_is_uppercase(char *str)
 {
-	write(fd, &c, 1);
+	unsigned int x;
+
+	x = 0;
+	while (str[x] != '\0')
+	{
+		if (str[x] < 65 || str[x] > 90)
+			return (0);
+		x++;
+	}
+	return (1);
 }
