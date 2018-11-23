@@ -56,6 +56,14 @@ SRCS= 	ft_memset.c \
 		ft_strndup.c \
 		ft_islower.c \
 		ft_isupper.c \
+		ft_swap.c \
+		ft_ft.c i \
+		ft_is_sort.c \
+		ft_strrev.c \
+		ft_is_negative.c \
+		ft_counter.c \
+		ft_wordcounter.c \
+		ft_filling.c \
 
 OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)

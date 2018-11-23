@@ -6,37 +6,38 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 19:14:30 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 19:30:34 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/23 23:08:44 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_wordcount(char const *s, char c)
+int		ft_wordcounter(char const *s, char c)
 {
 	size_t		i;
-	size_t		wordcount;
+	size_t		wordcounter;
 
 	i = 0;
-	wordcount = 0;
+	wordcounter = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
-			wordcount++;
+			wordcounter++;
 		while (s[i] && s[i] != c)
 			i++;
 		while (s[i] && s[i] == c)
 			i++;
 	}
-	return (wordcount);
+	return (wordcounter);
 }
 
-static	char	**ft_filling(char const *s, char c, char **tab)
+char	**ft_filling(char const *s, char c, char **tab)
 {
 	size_t		begin;
 	size_t		end;
 	size_t		i;
 
+	begin = 0;
 	end = 0;
 	i = 0;
 	while (s[end])
@@ -54,11 +55,11 @@ static	char	**ft_filling(char const *s, char c, char **tab)
 	return (tab);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char		**str;
 
-	if (!(str = (char**)malloc(sizeof(char*) * (ft_wordcount(s, c) + 1))))
+	if (!(str = (char**)malloc(sizeof(char*) * (ft_wordcounter(s, c) + 1))))
 		return (NULL);
 	return (ft_filling(s, c, str));
 }

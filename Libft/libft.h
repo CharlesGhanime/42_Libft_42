@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:00:22 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 20:24:29 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/23 23:27:24 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,12 @@ void		ft_putnbr_fd(int n, int fd);
 char		*ft_strndup(char *src, unsigned int n);
 int			ft_isupper(int c);
 int			ft_islower(int c);
+void		ft_swap(int *a, int *b);
+void		ft_ft(int *nbr);
+int			ft_is_sort(int *tab, int length, int (*f)(int, int));
+char		*ft_strrev(char *str);
+void		ft_is_negative(int n);
+int			ft_counter(int n);
+int			ft_wordcounter(char const *s, char c);
+char		**ft_filling(char const *s, char c, char **tab);
 #endif
