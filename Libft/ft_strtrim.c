@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 17:31:27 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 13:03:51 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/10 22:12:45 by cghanime          #+#    #+#             */
+/*   Updated: 2018/11/23 18:03:36 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,27 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t	i;
+	int		i;
+	int		len;
 	char	*new;
 
-	i = 0;
-	new = malloc(sizeof(char) * ft_strlen(s));
-	if (!new)
+	if (s == NULL)
 		return (NULL);
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
-			new[i] = s[i];
-		i++;
-	}
+	len = ft_strlen(s);
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+		len--;
+	i = -1;
+	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		len--;
+	if (len <= 0)
+		len = 0;
+	new = (char*)malloc(sizeof(char) * (len + 1));
+	if (new == NULL)
+		return (NULL);
+	s += i;
+	i = -1;
+	while (++i < len)
+		new[i] = *s++;
+	new[i] = '\0';
 	return (new);
 }
