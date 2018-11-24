@@ -6,22 +6,20 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:04:35 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 18:10:04 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/24 13:30:37 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t len)
 {
-	char			*s;
-	unsigned char	ch;
+	unsigned char	*s;
 
-	if (str == NULL)
-		return (NULL);
-	s = (char *)str;
-	ch = (unsigned char)c;
-	while (n--)
-		*(s++) = ch;
+	if (len == 0)
+		return (str);
+	s = (unsigned char *)str;
+	while (len-- != 0)
+		*s++ = (unsigned char)c;
 	return (str);
 }

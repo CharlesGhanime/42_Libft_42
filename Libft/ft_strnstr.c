@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 17:30:42 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 11:50:59 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/19 17:31:43 by cghanime          #+#    #+#             */
+/*   Updated: 2018/11/24 17:38:45 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,24 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
+	size_t pos;
 	size_t i;
-	size_t j;
-	size_t k;
 
+	pos = 0;
 	i = 0;
-	j = 0;
-	k = 0;
-	if (*str == '\0' && *to_find == '\0')
+	if (!*to_find)
 		return ((char *)str);
-	while (i < len)
+	while (str[pos] && pos < len)
 	{
-		if (str[i] == to_find[j])
-			k = i;
-		while (str[i] == to_find[j])
+		if (str[pos] == to_find[0])
 		{
-			i++;
-			j++;
-			if (to_find[j] == '\0')
-				return ((char *)&str[k]);
+			i = 1;
+			while (to_find[i] && str[pos + i] == to_find[i] && (pos + i) < len)
+				++i;
+			if (to_find[i] == '\0')
+				return ((char *)&str[pos]);
 		}
-		j = 0;
-		i = k++;
-		i++;
+		++pos;
 	}
-	return (NULL);
+	return (0);
 }

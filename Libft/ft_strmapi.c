@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 22:09:35 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 17:26:34 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/24 19:07:53 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		new[i] = (*f)(i, s[i]);
 		i++;
 	}
+	new[i] = '\0';
 	return (new);
 }
