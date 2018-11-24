@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:53:57 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/24 20:38:09 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/24 21:11:51 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**ft_filling(char const *s, char c, char **tab)
 			begin++;
 		end = begin;
 		while (s[end] && s[end] != c)
-			end ++;
+			end++;
 		if (end - begin != 0)
 			tab[i++] = ft_strndup((char *)s + begin, end - begin);
 	}
