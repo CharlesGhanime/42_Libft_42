@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 18:53:57 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/23 23:01:18 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/24 20:36:24 by cghanime          #+#    #+#             */
+/*   Updated: 2018/11/24 20:37:59 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int		ft_wordcounter(char const *s, char c)
 			wordcounter++;
 		while (s[i] && s[i] != c)
 			i++;
-			while (s[i] && s[i] == c)
-				i++;
+		while (s[i] && s[i] == c)
+			i++;
 	}
 	return (wordcounter);
 }
