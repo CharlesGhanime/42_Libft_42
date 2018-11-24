@@ -6,7 +6,11 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:31:43 by cghanime          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/11/24 17:35:28 by cghanime         ###   ########.fr       */
+=======
+/*   Updated: 2018/11/23 14:15:16 by cghanime         ###   ########.fr       */
+>>>>>>> 42709cad90597fc5607183573c3c4efcf4113470
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +24,11 @@ char	*ft_strstr(const char *str, const char *to_find)
 	pos = 0;
 	i = 0;
 	if (!*to_find)
+<<<<<<< HEAD
 		return ((char *)str);
+=======
+		return((char *)str);
+>>>>>>> 42709cad90597fc5607183573c3c4efcf4113470
 	while (str[pos])
 	{
 		if (str[pos] == to_find[0])
