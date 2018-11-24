@@ -6,15 +6,15 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:53:57 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/23 22:49:05 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/23 23:31:44 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
+int		ft_is_sort(int *tab, size_t length, int (*f)(int, int))
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i + 1 < length)

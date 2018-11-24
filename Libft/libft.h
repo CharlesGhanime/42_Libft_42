@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:00:22 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/23 23:27:24 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/24 14:10:05 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void		*ft_memset(void *str, int c, size_t n);
-void		ft_bzero(void *str, size_t n);
-void		*ft_memcpy(void *dst, const void *src, size_t n);
-void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void		*ft_memset(void *str, int c, size_t len);
+void		ft_bzero(void *str, size_t len);
+void		*ft_memcpy(void *dst, const void *src, size_t len);
+void		*ft_memccpy(void *dst, const void *src, int c, size_t len);
 void		*ft_memmove(void *dst, const void *src, size_t len);
-void		*ft_memchr(const void *s, int c, size_t n);
-int			ft_memcmp(const void *s1, const void *s2, size_t n);
+void		*ft_memchr(const void *s, int c, size_t len);
+int			ft_memcmp(const void *s1, const void *s2, size_t len);
 size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *s1);
 char		*ft_strcpy(char *dst, const char *src);
@@ -73,10 +73,24 @@ int			ft_isupper(int c);
 int			ft_islower(int c);
 void		ft_swap(int *a, int *b);
 void		ft_ft(int *nbr);
-int			ft_is_sort(int *tab, int length, int (*f)(int, int));
+int			ft_is_sort(int *tab, size_t length, int (*f)(int, int));
 char		*ft_strrev(char *str);
 void		ft_is_negative(int n);
 int			ft_counter(int n);
 int			ft_wordcounter(char const *s, char c);
 char		**ft_filling(char const *s, char c, char **tab);
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct	s_list	*next;
+}					t_list;
+
+t_list		ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void		**ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 #endif

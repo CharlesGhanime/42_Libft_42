@@ -57,7 +57,7 @@ SRCS= 	ft_memset.c \
 		ft_islower.c \
 		ft_isupper.c \
 		ft_swap.c \
-		ft_ft.c i \
+		ft_ft.c \
 		ft_is_sort.c \
 		ft_strrev.c \
 		ft_is_negative.c \
