@@ -21,10 +21,9 @@ char	*ft_strndup(char *src, unsigned int n)
 	while (src[i] && i < n)
 		i++;
 	n = i;
-	dest = (char *)malloc(sizeof(char) * (i + 1));
-	i = 0;
-	if (dest == NULL)
+	if (!(dest = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
+	i = 0;
 	while (i < n)
 	{
 		dest[i] = src[i];

@@ -28,8 +28,7 @@ char	*ft_strtrim(char const *s)
 		len--;
 	if (len <= 0)
 		len = 0;
-	new = (char*)malloc(sizeof(char) * (len + 1));
-	if (new == NULL)
+	if (!(new = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	s += i;
 	i = -1;
