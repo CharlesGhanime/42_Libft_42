@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:02:11 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/19 15:19:07 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/20 19:14:30 by cghanime          #+#    #+#             */
+/*   Updated: 2018/11/24 20:36:15 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	**ft_strsplit(char const *s, char c)
 {
-	size_t i;
+	char		**str;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-	ft_putchar_fd('\n', fd);
+	if (!s || !(str = (char**)malloc(sizeof(char*) * (ft_wordcounter(s, c) + 1))))
+		return (NULL);
+	return (ft_filling(s, c, str));
 }

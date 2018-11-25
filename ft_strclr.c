@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 22:09:35 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/24 19:07:53 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/12 20:36:32 by cghanime          #+#    #+#             */
+/*   Updated: 2018/11/19 16:24:42 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_strclr(char *s)
 {
-	char	*new;
-	size_t	i;
+	size_t i;
 
-	new = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!new)
-		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	if (s)
 	{
-		new[i] = (*f)(i, s[i]);
-		i++;
+		while (s[i])
+			s[i++] = '\0';
 	}
-	new[i] = '\0';
-	return (new);
 }

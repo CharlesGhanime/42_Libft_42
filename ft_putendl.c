@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:24:19 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/20 11:53:33 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/16 16:01:11 by cghanime          #+#    #+#             */
+/*   Updated: 2018/11/20 13:01:30 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_putendl(char const *s)
 {
 	size_t i;
 
 	i = 0;
-	free(*as);
-	*as = NULL;
+	if (s)
+	{
+		while (s[i])
+			ft_putchar(s[i++]);
+	ft_putchar('\n');
+	}
 }

@@ -64,6 +64,12 @@ SRCS= 	ft_memset.c \
 		ft_counter.c \
 		ft_wordcounter.c \
 		ft_filling.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
 OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)
