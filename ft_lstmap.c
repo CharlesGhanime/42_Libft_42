@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 17:37:03 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/25 07:01:55 by cghanime         ###   ########.fr       */
+/*   Updated: 2018/11/26 14:47:27 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*newlink;
 	t_list	*link;
 
-	if(!lst)
+	if (!lst)
 		return (NULL);
 	link = f(lst);
 	newlink = link;
