@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 07:59:05 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/12 08:40:03 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/12 15:20:59 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct	s_tree
 
 t_tree			*new_tree(int value);
 void			free_tree(t_tree *tr);
-t_tree			*add_tree(t_tree *left, t_tree *right, int node);
+t_tree			*join_tree(t_tree *left, t_tree *right, int node);
+void			print_tree_prefix(t_tree *tr);
+int				count_tree_nodes(t_tree *tr);
 
 #endif

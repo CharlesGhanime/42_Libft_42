@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 08:06:45 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/12 08:42:55 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/09/12 15:24:43 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ t_tree		*new_tree(int value)
 	return (tr);
 }
 
-t_tree		*add_tree(t_tree *left, t_tree *right, int node)
+t_tree		*join_tree(t_tree *left, t_tree *right, int node)
 {
 	t_tree *tr;
 
-	if((tr = new_tree(1)) == NULL)
+	if((tr = new_tree(node)) == NULL)
 		return (NULL);
 	tr->tleft = left;
 	tr->tright = right;
@@ -42,6 +42,28 @@ t_tree		*add_tree(t_tree *left, t_tree *right, int node)
 		right->parent = tr;
 	return (tr);
 }
+
+void		print_tree_prefix(t_tree *tr)
+{
+	if (tr == NULL)
+		return ;
+	if (tr->parent != NULL)
+		printf("(%d) -> (%d)\n", tr->parent->value, tr->value);
+	else
+		printf("(%d)\n", tr->value);
+	if (tr->tleft != NULL)
+		print_tree_prefix(tr->tleft);
+	if (tr->tright != NULL)
+		print_tree_prefix(tr->tright);
+}
+
+int			count_tree_nodes(t_tree *tr)
+{
+	if (tr == NULL)
+		return (0);
+	return (count_tree_nodes(tr->tleft) + count_tree_nodes(tr->tright) + 1);
+}
+
 
 void		free_tree(t_tree *tr)
 {
