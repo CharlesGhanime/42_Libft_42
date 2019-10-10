@@ -70,20 +70,27 @@ SRCS= 	ft_memset.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_ptrnew.c \
 
 OBJECTS = $(SRCS:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CPL) $(HEADER) -c $(SRCS)
-	ar -rcv $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@printf "\x1b[032m[Compiling libft...]\x1b[0m\n"
+	@$(CPL) $(HEADER) -c $(SRCS)
+	@printf "\x1b[032m+\x1b[0m"
+	@ar -rcv $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
+	@printf "\x1b[032m[OK]\x1b[0m\n"
 
 clean:
-	rm -f $(OBJECTS)
+	@rm -rf $(OBJECTS)
+	@printf "\x1b[032m[Cleaning objects...]\x1b[0m\n"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@printf "\x1b[032m[Cleaning all...]\x1b[0m\n"
 
 re: fclean all
 

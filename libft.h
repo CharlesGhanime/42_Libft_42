@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:00:22 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/25 06:36:54 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/10/10 20:00:50 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void				ft_is_negative(int n);
 int					ft_counter(int n);
 int					ft_wordcounter(char const *s, char c);
 char				**ft_filling(char const *s, char c, char **tab);
-
+void				*ft_ptrnew(size_t size);
 /*
 ** BONUS SINGLY-LINKED LISTS
 */

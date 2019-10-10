@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_ptrnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 21:55:35 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/10 19:29:18 by cghanime         ###   ########.fr       */
+/*   Created: 2019/10/10 19:28:24 by cghanime          #+#    #+#             */
+/*   Updated: 2019/10/10 20:02:05 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_ptrnew(size_t size)
 {
-	char	*string;
-	size_t	i;
+	void		*ptr;
 
-	i = 0;
-	if (!(string = malloc(sizeof(char) * size + 1)))
+	if (!(ptr = malloc(sizeof(void *) * size)))
 		return (NULL);
-	while (i < size + 1)
-	{
-		string[i] = '\0';
-		i++;
-	}
-	return (string);
+	ft_bzero(ptr, size);
+	return (ptr);
 }
