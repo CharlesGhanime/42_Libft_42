@@ -74,23 +74,41 @@ SRCS= 	ft_memset.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
+############
+# <Colors> #
+############
+
+YELLOW = \033[033m
+GREEN = \033[032m
+BLUE = \033[36m
+RED = \033[031m
+PURPLE = \033[35m
+RESET = \033[0m
+BOLD = \e[1m
+/BOLD = \e[0m
+
+#############
+# </Colors> #
+#############
+
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	@printf "\x1b[032m[Compiling libft...]\x1b[0m\n"
+.SILENT $(NAME): $(OBJECTS)
+	@printf "$(GREEN)[Compiling Libft...]$(RESET)			"
 	@$(CPL) $(HEADER) -c $(SRCS)
-	@printf "\x1b[032m+\x1b[0m"
-	@ar -rcv $(NAME) $(OBJECTS)
+	@ar -rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
-	@printf "\x1b[032m[OK]\x1b[0m\n"
+	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
 
 clean:
+	@printf "$(RED)[Cleaning Libft objects...]$(RESET)		"
 	@rm -rf $(OBJECTS)
-	@printf "\x1b[032m[Cleaning objects...]\x1b[0m\n"
+	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
 
 fclean: clean
+	@printf "$(RED)[Cleaning Libft target...]$(RESET)		"
 	@rm -f $(NAME)
-	@printf "\x1b[032m[Cleaning all...]\x1b[0m\n"
+	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
 
 re: fclean all
 
