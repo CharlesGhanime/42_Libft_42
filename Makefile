@@ -1,7 +1,7 @@
 NAME = libft.a
 CPL = gcc -Wall -Wextra -Werror
 HEADER = -I libft.h
-SRCS= 	ft_memset.c \
+SRC= 	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
@@ -72,7 +72,7 @@ SRCS= 	ft_memset.c \
 		ft_lstmap.c \
 		ft_ptrnew.c \
 
-OBJECTS = $(SRCS:.c=.o)
+OBJECTS = $(SRC:.c=.o)
 
 ############
 # <Colors> #
@@ -95,7 +95,7 @@ all: $(NAME)
 
 .SILENT $(NAME): $(OBJECTS)
 	@printf "$(GREEN)[Compiling Libft...]$(RESET)			"
-	@$(CPL) $(HEADER) -c $(SRCS)
+	@$(CPL) $(HEADER) -c $(SRC)
 	@ar -rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@printf "$(BOLD)$(GREEN)[OK]$(RESET)$(/BOLD)\n"
