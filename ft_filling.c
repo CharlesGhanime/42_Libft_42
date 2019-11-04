@@ -6,11 +6,12 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:53:57 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/24 21:11:51 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:12:49 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libc.h"
 
 char	**ft_filling(char const *s, char c, char **tab)
 {
