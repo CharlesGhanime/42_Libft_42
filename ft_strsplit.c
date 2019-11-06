@@ -23,7 +23,7 @@ char	**ft_strsplit(char const *s, char c)
 	str = ft_filling(s, c, str);
 	return (str);
 }
-
+/*
 int main(int argc, char **argv)
 {
 	char **str;
@@ -53,3 +53,4 @@ int main(int argc, char **argv)
 		return (0);
 	return (0);
 }
+*/

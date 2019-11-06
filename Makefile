@@ -71,6 +71,7 @@ SRC= 	ft_memset.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_ptrnew.c \
+		ft_strjoinfree.c \
 
 OBJECTS = $(SRC:.c=.o)
 

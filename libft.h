@@ -103,6 +103,8 @@ int					ft_counter(int n);
 int					ft_wordcounter(char const *s, char c);
 char				**ft_filling(char const *s, char c, char **tab);
 void				*ft_ptrnew(size_t len, size_t size);
+char				*ft_strjoinfree(char const *s1, char const *s2, int flag);
+
 /*
 ** BONUS SINGLY-LINKED LISTS
 */
