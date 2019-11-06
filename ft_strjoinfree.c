@@ -5,8 +5,11 @@ char	*ft_strjoinfree(char const *s1, char const *s2, int flag)
 {
 	char *new;
 	size_t len;
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+
+	if (s1 == NULL)
+		return ((char *)s2);
+	if (s2 == NULL)
+		return ((char *)s1);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(new = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
