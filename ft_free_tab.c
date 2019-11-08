@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:05:55 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 02:44:16 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 06:13:18 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 void	ft_free_tab(char **tab)
 {
-	int i;
+	size_t i;
 
-	i = 0;
 	if (!tab)
 		return ;
+	i = 0;
 	while (tab[i])
-	{
-		ft_strdel(&tab[i]);
-		i++;
-	}
+		ft_strdel(&tab[i++]);
 	free(tab);
 	tab = NULL;
 }

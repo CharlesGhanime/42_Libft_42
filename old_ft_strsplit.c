@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:24:19 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 05:34:15 by cghanime         ###   ########.fr       */
+/*   Created: 2018/11/20 19:14:30 by cghanime          #+#    #+#             */
+/*   Updated: 2019/11/08 03:58:05 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <libc.h>
 
-void	ft_strdel(char **as)
+char	**ft_strsplit(char const *s, char c)
 {
-	if (!as || !*as)
-		return ;
-	free(*as);
-	*as = NULL;
+	char		**str;
+
+	if (!s || !(str = (char**)malloc(sizeof(char*) *
+	(ft_wordcounter(s, c) + 1))))
+		return (NULL);
+	str = ft_filling(s, c, str);
+	return (str);
 }

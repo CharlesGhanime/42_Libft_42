@@ -74,7 +74,7 @@ SRC= 	ft_memset.c \
 		ft_strjoinfree.c \
 		ft_str_isnumeric.c \
 		ft_free_tab.c \
-		ft_join_tab.c \
+#		ft_join_tab.c \
 
 OBJECTS = $(SRC:.c=.o)
 
