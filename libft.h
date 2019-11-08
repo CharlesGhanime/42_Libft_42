@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:00:22 by cghanime          #+#    #+#             */
-/*   Updated: 2019/10/30 14:45:29 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/08 00:28:04 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define FALSE		0
+# define TRUE		1
+# define FAILURE	-1
+# define SUCCESS	0
 
 typedef struct		s_list
 {
@@ -104,6 +109,9 @@ int					ft_wordcounter(char const *s, char c);
 char				**ft_filling(char const *s, char c, char **tab);
 void				*ft_ptrnew(size_t len, size_t size);
 char				*ft_strjoinfree(char const *s1, char const *s2, int flag);
+int					ft_str_isnumeric(char *str);
+void				ft_free_tab(char **tab);
+void				ft_join_tab(char **tab, char **s);
 
 /*
 ** BONUS SINGLY-LINKED LISTS

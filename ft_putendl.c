@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:01:11 by cghanime          #+#    #+#             */
-/*   Updated: 2018/11/26 14:49:51 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/07 20:32:41 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 void	ft_putendl(char const *s)
 {
-	size_t i;
-
-	i = 0;
-	if (s)
-	{
-		while (s[i])
-			ft_putchar(s[i++]);
-		ft_putchar('\n');
-	}
+	if (!s)
+		return ;
+	write(1, s, ft_strlen(s));
+	write(1, "\n", 1);
 }

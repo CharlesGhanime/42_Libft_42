@@ -6,7 +6,7 @@
 /*   By: cghanime <cghanime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 08:06:45 by cghanime          #+#    #+#             */
-/*   Updated: 2019/09/12 15:24:43 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:47:39 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ t_tree		*new_tree(int value)
 	tr->tleft = NULL;
 	tr->tright = NULL;
 	tr->parent = NULL;
-
-	/* Aide pour le developpeur */
 	printf("creation de la racine avec value = %d\n", tr->value);
 	return (tr);
 }
@@ -32,7 +30,7 @@ t_tree		*join_tree(t_tree *left, t_tree *right, int node)
 {
 	t_tree *tr;
 
-	if((tr = new_tree(node)) == NULL)
+	if ((tr = new_tree(node)) == NULL)
 		return (NULL);
 	tr->tleft = left;
 	tr->tright = right;
@@ -64,13 +62,11 @@ int			count_tree_nodes(t_tree *tr)
 	return (count_tree_nodes(tr->tleft) + count_tree_nodes(tr->tright) + 1);
 }
 
-
 void		free_tree(t_tree *tr)
 {
 	if (tr == NULL)
 		return ;
 
-	/* Aide pour le developpeur  */
 	printf("Suppression de la racine avec value = %d\n", tr->value);
 	free_tree(tr->tleft);
 	free_tree(tr->tright);
