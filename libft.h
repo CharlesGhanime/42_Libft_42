@@ -6,7 +6,7 @@
 /*   By: cghanime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 20:00:22 by cghanime          #+#    #+#             */
-/*   Updated: 2019/11/08 05:28:58 by cghanime         ###   ########.fr       */
+/*   Updated: 2019/11/22 17:30:11 by cghanime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 # define FALSE		0
 # define TRUE		1
@@ -111,6 +112,7 @@ void				*ft_ptrnew(size_t len, size_t size);
 char				*ft_strjoinfree(char const *s1, char const *s2, int flag);
 int					ft_str_isnumeric(char *str);
 void				ft_free_tab(char **tab);
+void				ft_print_tab(char **tab);
 //void				ft_join_tab(char **tab, char **s);
 
 /*
